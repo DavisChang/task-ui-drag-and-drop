@@ -13,6 +13,8 @@ const Title = styled.h3`
 `;
 const TaskList = styled.div`
   padding: 8px;
+  background-color: ${props => props.isDraggingOver ? 'skyblue' : 'white'};
+  transition: background-color 0.2s ease;
 `;
 
 
@@ -25,10 +27,11 @@ export default class Column extends React.Component {
         </Title>
         <Droppable droppableId={this.props.column.id}>
           {
-            (provided) => (
+            (provided, snapshot) => (
               <TaskList
                 ref={provided.innerRef}
                 {...provided.drappableProps}
+                isDraggingOver={snapshot.isDraggingOver}
               >
                 {this.props.tasks.map((task, index) => <Task key={task.id} task={task} index={index} />)}
                 {provided.placeholder}
