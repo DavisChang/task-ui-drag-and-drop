@@ -8,7 +8,21 @@ const Container = styled.div`
   padding: 8px;
   margin-bottom: 8px;
   background-color: ${props => props.isDragging ? 'lightgreen' : 'white'};
+
+  display: flex;
 `;
+
+/*
+  * HandleDrag
+    <HandleDrag {...provided.dragHandleProps} />
+    const HandleDrag = styled.div`
+      margin-right: 8px;
+      width: 20px;
+      height: 20px;
+      background-color: orange;
+      border-radius: 4px;
+    `;
+ */
 
 export default class Task extends React.Component {
   render() {
