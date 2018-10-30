@@ -32,7 +32,7 @@ const Container = styled.div`
 export default class Task extends React.Component {
   render() {
 
-    const isDragDisabled = this.props.task.id === 'task-1';
+    const isDragDisabled = this.props.task.id === 'task-4';
 
     return (
       <Draggable
